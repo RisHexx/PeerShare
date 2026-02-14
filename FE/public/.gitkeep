@@ -1,0 +1,3 @@
+# This file ensures the public folder is tracked by git
+# Place your static assets (images, fonts, etc.) in this folder
+# They will be served at the root path: /image.png

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peer Share - P2P File Transfer</title>
+    
+    <!-- 
+      GOOGLE FONTS: Inter - Clean, professional font
+      Using font-display=swap for better performance
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+      FAVICON: Using custom favicon from public folder
+    -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <!--
+      META TAGS: For SEO and social sharing
+    -->
+    <meta name="description" content="Peer Share - Share files directly between browsers using WebRTC. No server upload, no file size limits, completely peer-to-peer." />
+</head>
+<body>
+    <!--
+      ROOT ELEMENT
+      ============
+      React will mount the entire application into this div.
+      
+      Why a single root?
+      - React uses a "virtual DOM" that manages this element
+      - All React components render inside here
+      - Enables React's efficient reconciliation algorithm
+      
+      The 'id' is used by ReactDOM.createRoot() in main.jsx
+    -->
+    <div id="root"></div>
+    
+    <!--
+      MAIN ENTRY POINT
+      ================
+      type="module" tells browser to treat this as ES6 module:
+      - Enables import/export syntax
+      - Deferred execution (runs after DOM is ready)
+      - Strict mode by default
+      
+      Vite intercepts this in development for:
+      - Hot Module Replacement (HMR)
+      - On-demand compilation
+      - Fast refresh for React
+    -->
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "webrtc-file-sharing-backend",
+  "version": "1.0.0",
+  "description": "WebSocket signaling server for WebRTC file sharing - handles peer discovery and signaling ONLY, no file data passes through here",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "webrtc",
+    "signaling",
+    "websocket",
+    "file-sharing"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.14.2"
+  }
+}
