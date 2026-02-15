@@ -133,6 +133,7 @@ export function createPeerConnection() {
  * @param {WebSocket} ws - Signaling WebSocket to send candidates through
  */
 export function setupIceCandidateHandling(peerConnection, ws) {
+  // when it discover the candiate its send it to peer
   peerConnection.onicecandidate = (event) => {
     // event.candidate is null when gathering is complete
     if (event.candidate) {
@@ -320,6 +321,8 @@ export function createDataChannel(peerConnection) {
  * @param {function} onMessage - Callback for each message received
  */
 export function setupDataChannelReceiver(peerConnection, onChannelOpen, onMessage) {
+
+  //reciever gets it from sdp offer
   peerConnection.ondatachannel = (event) => {
     const dataChannel = event.channel;
     console.log('[DataChannel] Received channel:', dataChannel.label);
