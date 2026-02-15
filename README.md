@@ -4,6 +4,12 @@ A real-time, peer-to-peer file sharing application leveraging WebRTC DataChannel
 
 ---
 
+<p align="center">
+  <img src="./02_ss.png" alt="Screenshot 1" width="48%" />
+  <img src="./03_ss.png" alt="Screenshot 2" width="48%" />
+</p>
+
+
 ## Overview
 
 PeerShare eliminates the traditional upload-download paradigm by establishing direct connections between peers. Files are transmitted through encrypted WebRTC DataChannels, ensuring data never traverses third-party servers.
@@ -70,3 +76,4 @@ PeerShare:    Sender ←→ Receiver (direct P2P)
 
 
 ---
+
