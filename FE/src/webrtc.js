@@ -2,7 +2,7 @@ export const CHUNK_SIZE = 16 * 1024; // 16KB
 
 // WebSocket Signaling Server URL
 
-export const SIGNALING_SERVER_URL = 'ws://localhost:8080';
+export const SIGNALING_SERVER_URL = import.meta.env.VITE_SIGNALING_SERVER_URL;
 
 /**
  * ICE Server Configuration
