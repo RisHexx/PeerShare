@@ -367,6 +367,26 @@ wss.on('connection', (ws) => {
                 }
                 break;
             
+            /**
+             * SESSION-ENDED HANDLER
+             * ---------------------
+             * When receiver clicks "Go to home" after transfer,
+             * notify the sender so they can also navigate home.
+             */
+            case 'session-ended':
+                if (currentCode && rooms.has(currentCode)) {
+                    const sessionRoom = rooms.get(currentCode);
+                    const otherPeer = currentRole === 'sender' ? sessionRoom.receiver : sessionRoom.sender;
+                    if (otherPeer && otherPeer.readyState === WebSocket.OPEN) {
+                        sendMessage(otherPeer, {
+                            type: 'session-ended',
+                            message: `The ${currentRole} has ended the session`
+                        });
+                        console.log(`Session ended by ${currentRole}`);
+                    }
+                }
+                break;
+            
             default:
                 console.log('Unknown message type:', message.type);
         }

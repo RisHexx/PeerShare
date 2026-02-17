@@ -447,17 +447,12 @@ function Receive() {
         <div className="flex items-center justify-between mb-6">
           <Link
             to="/"
-            className="flex items-center hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity text-gray-600 hover:text-gray-900"
           >
-            <img 
-              src="/Logo.png" 
-              alt="Peer Share Logo" 
-              className="w-8 h-8 object-contain"
-            />
-            <span className="text-lg font-semibold">
-              <span style={{ color: '#9A3E3E' }}>Peer</span>
-              <span className="text-gray-900">Share</span>
-            </span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            <span className="text-sm font-medium">Back</span>
           </Link>
           <h1 className="text-lg font-semibold text-gray-900">Receive File</h1>
           <div className="w-24"></div>
@@ -565,12 +560,18 @@ function Receive() {
               <span>Download Again</span>
             </button>
             
-<Link
-              to="/"
+<button
+              onClick={() => {
+                // Notify sender that session has ended
+                if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
+                  wsRef.current.send(JSON.stringify({ type: 'session-ended' }));
+                }
+                window.location.href = '/';
+              }}
               className="block mt-3 text-sm text-gray-500 hover:text-gray-700 underline"
             >
               Go to home page
-            </Link>
+            </button>
           </div>
         )}
         
