@@ -568,7 +568,7 @@ function Receive() {
                 }
                 window.location.href = '/';
               }}
-              className="block mt-3 text-sm text-gray-500 hover:text-gray-700 underline"
+              className="block w-full mt-3 text-sm text-gray-500 hover:text-gray-700 underline text-center"
             >
               Go to home page
             </button>
